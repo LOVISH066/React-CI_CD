@@ -1,0 +1,20 @@
+name: "CD Pipeline"
+
+on: 
+    workflow_run: 
+        workflows: ["Sample React CI Pipeline / Workflow"]
+        types:
+            - completed
+
+jobs:
+    deploy:
+        runs-on: ubuntu-latest
+
+        steps:
+            - name: "Setup nodejs"
+              uses: actions/setup-node@v4
+              with:
+                  node-version: '21'
+
+            - 
+              
